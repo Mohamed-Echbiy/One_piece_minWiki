@@ -68,7 +68,7 @@ const Div = styled.div`
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: #050404dd;
+      background-color: #050404;
       z-index: 10000;
       display: flex;
       justify-content: center;
