@@ -13,6 +13,7 @@ function EpisodeCard({ epdata }) {
   return (
     <Div>
       <div className="Epcard__container">
+        <div className="loading"></div>
         <div className="Epcard__image">
           <a href={epdata.url} target="_blank" title="watch now">
             <img
