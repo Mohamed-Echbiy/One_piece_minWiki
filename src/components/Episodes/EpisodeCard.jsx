@@ -1,9 +1,11 @@
-import React from "react";
+import { useState } from "react";
 import { BsPlayCircleFill } from "react-icons/bs";
 import styled from "styled-components";
 import { nanoid } from "nanoid";
+import { CircularProgress } from "@mui/material";
 
 function EpisodeCard({ epdata }) {
+  const [isImageLoaded, setImageLoaded] = useState(false);
   const epnumbers = epdata.episode
     .split(" ")
     .map((L) => +L)[1]
@@ -11,9 +13,13 @@ function EpisodeCard({ epdata }) {
     .split("");
 
   return (
-    <Div>
+    <Div className={!isImageLoaded ? "p-5" : undefined}>
       <div className="Epcard__container">
-        <div className="loading"></div>
+        {!isImageLoaded && (
+          <div className="loading">
+            <CircularProgress />
+          </div>
+        )}
         <div className="Epcard__image">
           <a href={epdata.url} target="_blank" title="watch now">
             <img
@@ -21,6 +27,7 @@ function EpisodeCard({ epdata }) {
               alt={`${epdata.episode} one piece`}
               width="200"
               height="auto"
+              onLoad={() => setImageLoaded((pre) => !pre)}
             />
           </a>
           <a href={epdata.url} target="_blank" title="watch now">
@@ -43,6 +50,9 @@ export default EpisodeCard;
 const Div = styled.div`
   width: 24%;
   min-width: 200px;
+  &.p-5 {
+    padding: 5px;
+  }
   .Epcard__container {
     width: 100%;
     min-width: 200px;
@@ -51,7 +61,24 @@ const Div = styled.div`
     justify-content: center;
     margin-bottom: 20px;
     z-index: 101;
+    position: relative;
+    .loading {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #050404dd;
+      z-index: 10000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span svg {
+        color: gold;
+      }
+    }
   }
+
   .Epcard__image {
     width: 100%;
     margin-left: 10px;
@@ -59,6 +86,7 @@ const Div = styled.div`
     transition: linear 0.3s 0.1s;
     z-index: 100;
     overflow: hidden;
+
     &:hover {
       transform: rotate(-1deg);
     }

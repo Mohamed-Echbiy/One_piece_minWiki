@@ -5,6 +5,7 @@ import EpisodeCard from "./EpisodeCard";
 //assets
 import "animate.css";
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
+import ErrorPage from "../../ErrorPage";
 
 function Episodes() {
   const [page, setPage] = useState(1);
@@ -29,10 +30,12 @@ function Episodes() {
       </Div>
     );
   }
-  console.log(data);
+  if (isError) {
+    return <ErrorPage />;
+  }
   if (isSuccess) {
     return (
-      <Div>
+      <Div className="container__episodes">
         <h1>Anime Episodes:</h1>
         <div className="next_pre">
           <button

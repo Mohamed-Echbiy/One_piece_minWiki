@@ -1,6 +1,7 @@
 import { Skeleton } from "@mui/material";
 import React, { useState } from "react";
 import styled from "styled-components";
+import { nanoid } from "nanoid";
 function StaffCard({ data }) {
   const [imageLoaded, setImageLoaded] = useState(false);
   const ImageHasLoaded = () => {
@@ -26,7 +27,7 @@ function StaffCard({ data }) {
         <div className="staff_info">
           <h2>{data.person.name}</h2>
           {data.positions.map((position) => (
-            <p>
+            <p key={nanoid(10)}>
               <span>Position:</span> {position}
             </p>
           ))}
@@ -54,7 +55,7 @@ const Div = styled.div`
     position: relative;
     img {
       width: 100%;
-      height: 250px;
+      height: 230px;
       border-radius: 5px;
     }
   }

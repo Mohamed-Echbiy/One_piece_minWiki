@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import styled from "styled-components";
+import ErrorPage from "../../ErrorPage";
 import StaffCard from "./StaffCard";
 
 function Staff() {
@@ -9,7 +10,7 @@ function Staff() {
     const data = await res.json();
     return data.data;
   };
-  const { data, isLoading } = useQuery(["satff"], fetchStaff);
+  const { data, isLoading, isError } = useQuery(["satff"], fetchStaff);
   if (isLoading) {
     return (
       <Div className="loading">
@@ -19,6 +20,9 @@ function Staff() {
         />
       </Div>
     );
+  }
+  if (isError) {
+    return <ErrorPage />;
   }
   return (
     <Div className="animate__animated animate__fadeInUp ">
