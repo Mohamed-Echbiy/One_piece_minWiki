@@ -30,9 +30,10 @@ function Episodes() {
       </Div>
     );
   }
-  if (isError) {
+  if (isError || data.data.length === 0) {
     return <ErrorPage />;
   }
+  console.log(data);
   if (isSuccess) {
     return (
       <Div className="container__episodes">
@@ -41,15 +42,19 @@ function Episodes() {
           <button
             disabled={page <= 1}
             onClick={() => setPage((pre) => pre - 1)}
-            className="animate__animated scale__it"
+            className={`animate__animated scale__it ${
+              page <= 1 ? "disable" : undefined
+            }`}
           >
             <BsArrowLeft className="previous__icon animate__animated scale__it" />{" "}
             Previous
           </button>
           <button
             onClick={() => setPage((pre) => pre + 1)}
-            disabled={data.pagination.has_nex_page === false}
-            className="animate__animated scale__it"
+            disabled={data.pagination.has_next_page === false}
+            className={`animate__animated scale__it ${
+              data.pagination.has_next_page === false ? "disable" : undefined
+            }`}
           >
             Next <BsArrowRight className="next__icon" />
           </button>
@@ -63,14 +68,18 @@ function Episodes() {
           <button
             disabled={page <= 1}
             onClick={() => setPage((pre) => pre - 1)}
-            className="animate__animated scale__it"
+            className={`animate__animated scale__it ${
+              page <= 1 ? "disable" : undefined
+            }`}
           >
             <BsArrowLeft className="previous__icon" /> Previous
           </button>
           <button
             onClick={() => setPage((pre) => pre + 1)}
             disabled={data.pagination.has_nex_page === false}
-            className="animate__animated scale__it"
+            className={`animate__animated scale__it ${
+              page <= 1 ? "disable" : undefined
+            }`}
           >
             Next <BsArrowRight className="next__icon" />
           </button>
@@ -115,6 +124,14 @@ const Div = styled.div`
     }
     svg.previous__icon {
       margin-right: 10px;
+    }
+    button.disable {
+      background-color: #3f3f3fcd;
+      color: #e0e0e0e1;
+      svg.next__icon,
+      svg.previous__icon {
+        color: #e0e0e0e1;
+      }
     }
   }
   &.loading {

@@ -10,6 +10,7 @@ export default function CharacterCard({ data }) {
           alt={data.character.name}
           width="300"
           height="466.66"
+          loading="lazy"
         />
       </Image>
       <p>{data.character.name}</p>

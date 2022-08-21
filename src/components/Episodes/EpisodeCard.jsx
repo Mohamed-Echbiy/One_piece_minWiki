@@ -86,7 +86,9 @@ const Div = styled.div`
     transition: linear 0.3s 0.1s;
     z-index: 100;
     overflow: hidden;
-
+    @media (max-width: 420px) {
+      overflow: visible;
+    }
     &:hover {
       transform: rotate(-1deg);
     }
@@ -113,6 +115,10 @@ const Div = styled.div`
       height: 50px;
       border: 2px solid white;
       border-radius: 50%;
+      @media (max-width: 420px) {
+        width: 35px;
+        height: 35px;
+      }
     }
     .title {
       position: absolute;
@@ -125,6 +131,9 @@ const Div = styled.div`
       font-weight: 600;
       transform: translateY(-45px);
       transition: linear 0.4s;
+      @media (max-width: 420px) {
+        transform: translateY(0px);
+      }
     }
   }
   .ep {
