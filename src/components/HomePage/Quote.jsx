@@ -21,7 +21,7 @@ const Div = styled.div`
   box-shadow: 0px 6px 10px 0px #0000007d;
   margin-bottom: 40px;
   @media (max-width: 765px) {
-    padding: 40px 5px;
+    padding: 40px 15px;
   }
   h3 {
     margin-bottom: 15px;

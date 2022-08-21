@@ -165,7 +165,8 @@ const Div = styled.div`
   }
   .swiper-button-next,
   .swiper-button-prev {
-    @media (max-width: 420px) {
+    color: gold;
+    @media (max-width: 320px) {
       display: none;
     }
   }
@@ -180,10 +181,17 @@ const Div = styled.div`
     .oda__image,
     .studio__image {
       width: 250px;
+      height: auto;
       margin-bottom: 20px;
       img {
         width: 100%;
         border-radius: 20px;
+      }
+      @media (max-width: 420px) {
+        width: 200px;
+        img {
+          height: 200px;
+        }
       }
     }
   }
@@ -201,6 +209,7 @@ const Div = styled.div`
     letter-spacing: 2px;
     @media (max-width: 765px) {
       font-size: 0.8rem;
+      min-width: 95%;
     }
     @media (min-width: 766px) and (max-width: 992px) {
       font-size: 1rem;
@@ -228,6 +237,9 @@ const Div = styled.div`
       width: 70%;
       min-width: 300px;
       margin-left: 20px;
+      p {
+        padding-bottom: 20px;
+      }
     }
   }
   .The__Image {
@@ -262,6 +274,10 @@ const Div = styled.div`
     span {
       width: 15px;
       height: 15px;
+    }
+    span.swiper-pagination-bullet {
+      background-color: #ffffffb2;
+      opacity: 0.7;
     }
     span.swiper-pagination-bullet-active {
       background-color: gold;

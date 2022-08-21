@@ -86,6 +86,10 @@ const Div = styled.div`
       width: 15px;
       height: 15px;
     }
+    span.swiper-pagination-bullet {
+      background-color: #ffffffb2;
+      opacity: 0.7;
+    }
     span.swiper-pagination-bullet-active {
       background-color: gold;
     }

@@ -49,13 +49,13 @@ export default EpisodeCard;
 
 const Div = styled.div`
   width: 24%;
-  min-width: 200px;
+  min-width: 250px;
   &.p-5 {
     padding: 5px;
   }
   .Epcard__container {
     width: 100%;
-    min-width: 200px;
+    min-width: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -77,6 +77,9 @@ const Div = styled.div`
         color: gold;
       }
     }
+  }
+  @media (max-width: 520px) {
+    min-width: 95%;
   }
 
   .Epcard__image {
