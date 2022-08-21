@@ -29,4 +29,8 @@ in the end , There is a news tab but when you click you get and error message an
 
 in overall the website scores well when it comes to SEO, Accessibility, Best Practices and Performance
 
-<iframe src="./Readme-Assets/forReadme.mp4" frameborder="0" allowfullscreen="true"></iframe>
+
+
+https://user-images.githubusercontent.com/106173219/185775535-d5ec72db-7252-46f4-a931-d585c8600c77.mp4
+
+
