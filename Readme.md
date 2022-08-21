@@ -29,4 +29,6 @@ in the end , There is a news tab but when you click you get and error message an
 
 in overall the website scores well when it comes to SEO, Accessibility, Best Practices and Performance
 
-./Readme-Assets/forReadme.mp4
+<video controls="true" allowfullscreen="true">
+<source src="./Readme-Assets/forReadme.mp4" type="video/mp4"/>
+</video>
