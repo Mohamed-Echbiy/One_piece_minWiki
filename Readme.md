@@ -29,4 +29,4 @@ in the end , There is a news tab but when you click you get and error message an
 
 in overall the website scores well when it comes to SEO, Accessibility, Best Practices and Performance
 
-![lighthouse](./Readme-Assets/forReadme.mp4)
+./Readme-Assets/forReadme.mp4
